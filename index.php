@@ -1,3 +1,10 @@
+<?php
+session_start();
+include('connection.php');
+//logout
+include('logout.php');
+// remember me
+include('rememberme.php');
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,44 +12,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Plans</title>
+    <title>Project 2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <style>
-      /*Container*/
-#container {
- margin-top: 100px; 
-}
-
-/*Hide All Plans and Done buttons*/
-/*#notePad,*/ #allPlans, #done {
-  display: none;
-}
-
-
-/*Adding styling to the logged in buttons*/
-.buttons {
- margin-bottom: 20px; 
-}
-
-/*Style text area where user will write plans*/
-textarea {
-  width: 100%;
-  max-width: 100%;
-  font-size: 16px;
-  line-height: 1.5em;
-  border-left-width: 20px;
-  border-color: #2f2b3d;
-  color: #2f2b3d;
-  background-color: #FBFFFF;
-  padding: 10px;
-}
-
-
-
-    </style>
 </head>
 
 <body>
@@ -60,43 +34,23 @@ textarea {
             </div>
             <div class="navbar-collapse collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Profile</a></li>
-                    <li class="active"><a href="#">My Plans</a></li>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Contact us</a></li>
                 </ul>
                 <!--Login button pushed to the right-->
                 <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Logged in as <b>username</b></a></li>
-                    <li><a href="#">Log out</a></li>
+                    <li><a href="#loginModal" data-toggle="modal">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Container -->
-    <div class="container" id="container">
-      <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-          <div class="buttons">
-            <button id="addPlan" type="button" class="btn btn green btn-lg">Add Plan</button>
-
-            <button id="edit" type="button" class="btn btn green btn-lg pull-right">Edit</button>
-
-            <button id="done" type="button" class="btn btn-primary btn-lg pull-right">Done</button>
-
-            <button id="allPlans" type="button" class="btn btn green btn-lg">All Plans</button>
-          </div>
-          <div id="notePad">
-            <textarea rows="10"></textarea>
-          </div>
-          <div id="plans" class="plans">
-          <!-- Ajax call to file -->
-          
-            
-          </div>
-        </div>
-      </div>
+    <!--Jumbotron-->
+    <div class="jumbotron" id="myContainer">
+        <h1>Project 2</h1>
+        <p>Sign up and have one less thing to worry about.</p>
+        <p>We will remind you of your plans by sending a text message to your phone!</p>
+        <button type="button" class="btn btn-large green signup" data-target="#signupModal" data-toggle="modal">Sign up to get started</button>
     </div>
-    
     <!--Login Form-->
     <form method="post" id="loginform">
         <div class="modal" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -234,6 +188,9 @@ textarea {
     <script src="js/bootstrap.min.js"></script>
     <script src="assets/javascript/logic.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="assets/javascript/index.js"></script>
 </body>
 
 </html>
+
+?>
